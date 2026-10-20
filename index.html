@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkyCrest Digital Marketing — B. Suriya Prakash</title>
+<meta name="description" content="SkyCrest helps businesses grow through SEO, Google Ads, Branding, Social Media Marketing and Website Development in Tamil Nadu.">
+<meta name="author" content="B. Suriya Prakash">
+<meta property="og:title" content="SkyCrest Digital Marketing">
+<meta property="og:description" content="Helping businesses grow through performance marketing, SEO and creative design.">
+<meta property="og:image" content="skycrest-og.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://skycrest.in">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SkyCrest Digital Marketing">
+<meta name="twitter:description" content="SEO · Google Ads · Meta Ads · Branding · Web Dev · Tamil Nadu">
+<meta name="twitter:image" content="skycrest-og.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+<link rel="apple-touch-icon" sizes="512x512" href="favicon-512.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="style1.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* ===== BADGE FLOAT ANIMATION ===== */
+.badge { animation: badgeFloat 3s ease-in-out infinite alternate; }
+.badge1 { animation-delay: 0s; }
+.badge2 { animation-delay: 0.8s; }
+.badge3 { animation-delay: 1.6s; }
+.badge4 { animation-delay: 2.4s; }
+@keyframes badgeFloat { from { transform: translateY(0px); } to { transform: translateY(-12px); } }
+
+/* ===== SERVICE MODAL OVERLAY ===== */
+.svc-modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(4,10,25,.88);
+  backdrop-filter: blur(14px);
+  z-index: 99999;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  opacity: 0; visibility: hidden;
+  transition: opacity .35s ease, visibility .35s;
+}
+.svc-modal-overlay.open { opacity: 1; visibility: visible; }
+
+.svc-modal {
+  background: var(--bg2);
+  border: 1px solid var(--border-h);
+  border-radius: 28px;
+  width: 100%; max-width: 960px;
+  max-height: 90vh; overflow-y: auto;
+  padding: 44px;
+  transform: translateY(30px) scale(.97);
+  transition: transform .35s ease;
+  position: relative;
+}
+.svc-modal-overlay.open .svc-modal { transform: translateY(0) scale(1); }
+.svc-modal::-webkit-scrollbar { width: 4px; }
+.svc-modal::-webkit-scrollbar-track { background: transparent; }
+.svc-modal::-webkit-scrollbar-thumb { background: var(--border-h); border-radius: 4px; }
+
+.svc-modal-close {
+  position: absolute; top: 20px; right: 24px;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--card2); border: 1px solid var(--border);
+  color: var(--text); font-size: 16px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; transition: .3s;
+}
+.svc-modal-close:hover { background: rgba(239,68,68,.15); border-color: rgba(239,68,68,.4); color: #ef4444; }
+
+.svc-modal-header { display: flex; align-items: center; gap: 18px; margin-bottom: 10px; }
+.svc-modal-icon {
+  width: 62px; height: 62px; border-radius: 16px;
+  background: rgba(99,157,255,.1); border: 1px solid rgba(99,157,255,.22);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.svc-modal-icon i { font-size: 25px; color: var(--blue); }
+.svc-modal-header h2 { font-size: 30px; font-weight: 800; }
+.svc-modal-tag {
+  display: inline-block; padding: 5px 14px; border-radius: 30px;
+  background: rgba(99,157,255,.1); border: 1px solid rgba(99,157,255,.2);
+  color: var(--blue); font-size: 11px; letter-spacing: 1px; font-weight: 600; margin-top: 6px;
+}
+.svc-modal-desc {
+  color: var(--muted); font-size: 14.5px; line-height: 1.88;
+  margin: 18px 0 28px; padding-bottom: 22px;
+  border-bottom: 1px solid var(--border);
+}
+.svc-features { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+.svc-pill {
+  padding: 7px 16px; border-radius: 30px;
+  background: rgba(99,157,255,.07); border: 1px solid rgba(99,157,255,.15);
+  color: var(--text); font-size: 12.5px;
+  display: flex; align-items: center; gap: 6px;
+}
+.svc-pill i { color: var(--blue); font-size: 11px; }
+.pkg-heading { font-size: 13px; font-weight: 700; color: var(--muted); letter-spacing: 2px; margin-bottom: 20px; }
+.svc-pkg-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+
+.svc-pkg-card {
+  border-radius: 20px; padding: 26px 22px;
+  border: 1px solid var(--border); background: var(--card);
+  position: relative; transition: .3s;
+  display: flex; flex-direction: column;
+}
+.svc-pkg-card:hover { border-color: var(--border-h); transform: translateY(-5px); }
+.svc-pkg-card.popular {
+  border-color: var(--blue);
+  background: rgba(99,157,255,.06);
+  box-shadow: 0 0 30px rgba(99,157,255,.12);
+}
+.popular-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--blue); color: #fff;
+  padding: 5px 16px; border-radius: 30px;
+  font-size: 11px; font-weight: 700; letter-spacing: 1px; white-space: nowrap;
+}
+.svc-pkg-name { font-size: 13px; color: var(--muted); letter-spacing: 1px; font-weight: 600; margin-bottom: 8px; }
+.svc-pkg-price { font-size: 32px; font-weight: 900; color: var(--text); margin-bottom: 4px; }
+.svc-pkg-period { font-size: 12px; color: var(--muted); margin-bottom: 18px; }
+.svc-pkg-features { list-style: none; margin-bottom: 22px; flex: 1; }
+.svc-pkg-features li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13px; color: var(--muted);
+  padding: 7px 0; border-bottom: 1px solid rgba(99,157,255,.07); line-height: 1.6;
+}
+.svc-pkg-features li:last-child { border-bottom: none; }
+.svc-pkg-features li i { color: var(--blue); font-size: 12px; margin-top: 3px; flex-shrink: 0; }
+.svc-pkg-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px; border-radius: 12px;
+  text-decoration: none; font-weight: 700; font-size: 13.5px;
+  transition: .3s; border: none; cursor: pointer;
+}
+.svc-pkg-btn.outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.svc-pkg-btn.outline:hover { border-color: var(--blue); color: var(--blue); }
+.svc-pkg-btn.filled { background: var(--blue); color: #fff; }
+.svc-pkg-btn.filled:hover { background: var(--blue2); transform: translateY(-2px); }
+.svc-custom-note {
+  margin-top: 22px; padding: 16px 20px;
+  background: rgba(99,157,255,.05);
+  border: 1px dashed rgba(99,157,255,.25); border-radius: 14px;
+  display: flex; align-items: center; gap: 14px;
+  font-size: 13px; color: var(--muted);
+}
+.svc-custom-note i { color: var(--blue); font-size: 18px; flex-shrink: 0; }
+.svc-custom-note a { color: var(--blue); font-weight: 600; text-decoration: none; }
+.svc-custom-note a:hover { text-decoration: underline; }
+
+/* Service card updated click style */
+.service-card { cursor: pointer; }
+.service-card .arrow-btn { pointer-events: none; }
+
+/* ===== TESTIMONIALS ===== */
+.testimonials-section { width: 90%; margin: 100px auto; }
+.testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.testi-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 22px; padding: 28px 26px; transition: .4s; position: relative;
+}
+.testi-card:hover { transform: translateY(-7px); border-color: var(--border-h); box-shadow: 0 15px 35px rgba(99,157,255,.08); }
+.testi-quote-icon { font-size: 36px; color: var(--blue); opacity: .25; line-height: 1; margin-bottom: 14px; font-family: Georgia, serif; }
+.testi-text { font-size: 14px; color: var(--muted); line-height: 1.9; margin-bottom: 22px; font-style: italic; }
+.testi-stars { color: #f59e0b; font-size: 13px; margin-bottom: 16px; letter-spacing: 2px; }
+.testi-author { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--border); }
+.testi-avatar {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: rgba(99,157,255,.12); border: 2px solid var(--blue);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 800; color: var(--blue); flex-shrink: 0;
+}
+.testi-name { font-size: 14px; font-weight: 700; }
+.testi-biz { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.testi-industry { display: inline-block; margin-top: 5px; padding: 3px 10px; border-radius: 20px; background: rgba(99,157,255,.1); border: 1px solid rgba(99,157,255,.2); color: var(--blue); font-size: 11px; font-weight: 600; }
+
+/* ===== CONTACT TOAST ===== */
+.toast {
+  position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(80px);
+  background: #16a34a; color: #fff;
+  padding: 14px 28px; border-radius: 50px;
+  font-size: 14px; font-weight: 600;
+  display: flex; align-items: center; gap: 10px;
+  z-index: 999999; box-shadow: 0 10px 30px rgba(22,163,74,.4);
+  transition: transform .4s ease, opacity .4s ease; opacity: 0;
+}
+.toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+/* ===== FOOTER UPGRADE ===== */
+.footer {
+  border-top: 1px solid var(--border);
+  margin-top: 80px;
+  padding: 60px 5% 28px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px; margin-bottom: 48px;
+}
+.footer-brand p { font-size: 13.5px; color: var(--muted); line-height: 1.85; margin: 14px 0 20px; max-width: 300px; }
+.footer-social { display: flex; gap: 9px; }
+.footer-social a {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(99,157,255,.08); border: 1px solid rgba(99,157,255,.14);
+  color: var(--blue); text-decoration: none;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; transition: .3s;
+}
+.footer-social a:hover { background: var(--blue); color: #fff; transform: translateY(-3px); }
+.footer-col h4 { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; color: var(--blue); margin-bottom: 18px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+.footer-col ul li a { font-size: 13px; color: var(--muted); text-decoration: none; transition: .3s; }
+.footer-col ul li a:hover { color: var(--blue); padding-left: 4px; }
+.footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+.footer-contact-item i { color: var(--blue); font-size: 14px; margin-top: 2px; flex-shrink: 0; }
+.footer-contact-item span { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.footer-bottom {
+  border-top: 1px solid var(--border); padding-top: 22px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 10px;
+}
+.footer-bottom p { color: var(--muted); font-size: 12.5px; }
+.footer-bottom-right { font-size: 12px; color: var(--muted); opacity: .5; }
+
+@media(max-width:900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .svc-pkg-grid { grid-template-columns: 1fr; }
+  .svc-modal { padding: 28px 22px; }
+  .testi-grid { grid-template-columns: 1fr; }
+}
+@media(max-width:600px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .svc-modal-header { flex-direction: column; align-items: flex-start; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS BAR -->
+<div class="scroll-bar" id="scrollBar"></div>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">SKY<span>CREST</span></div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+    <p>Loading Experience...</p>
+  </div>
+</div>
+
+<!-- TRAILING CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-trail" id="t1"></div>
+<div class="cursor-trail" id="t2"></div>
+<div class="cursor-trail" id="t3"></div>
+<div class="cursor-trail" id="t4"></div>
+<div class="cursor-trail" id="t5"></div>
+
+<!-- BACKGROUND LAYERS -->
+<div class="aurora">
+  <div class="aurora-blob a1"></div>
+  <div class="aurora-blob a2"></div>
+  <div class="aurora-blob a3"></div>
+</div>
+<div class="bg-grid"></div>
+<canvas id="particleCanvas"></canvas>
+<div class="bg-video">
+  <video autoplay muted loop playsinline>
+    <source src="Asset/bg-video.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/919342838848?text=Hi%20Suriya%2C%20I%20want%20to%20grow%20my%20business!" target="_blank" class="wa-float" title="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <span>Chat Now</span>
+</a>
+
+<!-- CONTACT TOAST -->
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i> Message sent! We'll get back to you soon.</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#home" class="logo-img-wrap">
+    <img src="skycrest-logo.png" alt="SkyCrest" class="nav-logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about-section">About</a></li>
+    <li><a href="#services-section">Services</a></li>
+    <li><a href="#projects-section">Works</a></li>
+    <li><a href="#process-section">Process</a></li>
+    <li><a href="#team-section">Team</a></li>
+    <li><a href="#contact-section">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon" id="themeIcon"></i></button>
+    <a href="#contact-section" class="hire-btn">Let's Work Together</a>
+    <button class="hamburger" id="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#home" onclick="toggleNav()">Home</a>
+  <a href="#about-section" onclick="toggleNav()">About</a>
+  <a href="#services-section" onclick="toggleNav()">Services</a>
+  <a href="#projects-section" onclick="toggleNav()">Works</a>
+  <a href="#process-section" onclick="toggleNav()">Process</a>
+  <a href="#team-section" onclick="toggleNav()">Team</a>
+  <a href="#contact-section" onclick="toggleNav()">Contact</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<div class="hero-wrapper">
+<section class="hero" id="home">
+  <div class="hero-left reveal-left">
+    <p class="small-text"><span class="dot-pulse"></span> AVAILABLE FOR PROJECTS</p>
+    <h1 class="typing-title">I'M A<br><span id="typing"></span></h1>
+    <p class="desc">Helping businesses grow through SEO, Google Ads, Branding, Website Development, Social Media Marketing and Creative Design.</p>
+    <div class="hero-stats">
+      <div class="hs"><strong>20+</strong><span>Clients</span></div>
+      <div class="hs-div"></div>
+      <div class="hs"><strong>100+</strong><span>Projects</span></div>
+      <div class="hs-div"></div>
+      <div class="hs"><strong>2+</strong><span>Years</span></div>
+    </div>
+    <div class="hero-buttons">
+      <a href="#projects-section" class="primary-btn">View My Work <i class="fas fa-arrow-right"></i></a>
+      <a href="Resume_Suriya_.pdf" class="secondary-btn" target="_blank"><i class="fas fa-file-alt"></i> Resume</a>
+    </div>
+  </div>
+  <div class="hero-right reveal-right">
+    <div class="hero-img-wrap">
+      <img src="Suriya/Sp1.png" alt="Suriya">
+      <div class="hero-ring"></div>
+    </div>
+    <div class="badge badge1"><i class="fas fa-search"></i> SEO Expert</div>
+    <div class="badge badge2"><i class="fab fa-google"></i> Google Ads</div>
+    <div class="badge badge3"><i class="fab fa-facebook"></i> Meta Ads</div>
+    <div class="badge badge4"><i class="fas fa-star"></i> 2+ Yrs Exp</div>
+  </div>
+</section>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="about-section reveal-up" id="about-section">
+  <div class="about-top-card">
+    <div class="profile-side">
+      <div class="profile-circle"><img src="Suriya/Prog.jpg" alt="Profile"></div>
+    </div>
+    <div class="about-content">
+      <span class="mini-heading">WHO AM I ?</span>
+      <h2>B. Suriya Prakash</h2>
+      <p>Founder of SkyCrest Digital Marketing Agency. Helping brands grow through SEO, Google Ads, Meta Ads, Website Development, Branding and Content Marketing.</p>
+    </div>
+    <div class="specialization">
+      <h4>SPECIALIZATIONS</h4>
+      <div class="spec-grid">
+        <div class="spec-box">SMM</div>
+        <div class="spec-box">Graphic<br>Design</div>
+        <div class="spec-box">Branding</div>
+      </div>
+    </div>
+  </div>
+  <div class="tools-container">
+    <h3>TOOLS I USE</h3>
+    <div class="tools-marquee"><div class="tools-track">
+      <span>Photoshop</span><span>Illustrator</span><span>Premiere Pro</span>
+      <span>Canva</span><span>Instagram</span><span>Facebook Ads</span>
+      <span>ChatGPT</span><span>SEO Tools</span><span>Google Ads</span><span>Meta Ads</span>
+      <span>Photoshop</span><span>Illustrator</span><span>Premiere Pro</span>
+      <span>Canva</span><span>Instagram</span><span>Facebook Ads</span>
+      <span>ChatGPT</span><span>SEO Tools</span><span>Google Ads</span><span>Meta Ads</span>
+    </div></div>
+    <div class="info-grid">
+      <div class="info-card reveal-up"><h3>Entrepreneurship — 2024</h3><ul><li>Founder — SkyCrest Digital Marketing</li><li>Digital Marketing Services</li><li>Brand Growth Strategies</li><li>Business Automation</li></ul></div>
+      <div class="info-card reveal-up"><h3>Work Experience</h3><ul><li>Project Assistant — Anna University</li><li>Data Entry Operator — Builders Engineering College</li><li>Assistant Manager — Guru Law Firms</li></ul></div>
+      <div class="info-card reveal-up"><h3>Core Skills</h3><ul><li>SEO &amp; Google Ads</li><li>Meta Ads (Facebook + Instagram)</li><li>Website Development</li><li>Graphic Design &amp; Video Editing</li><li>Branding &amp; Content Marketing</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services-section" id="services-section">
+  <div class="section-head reveal-up">
+    <span class="section-label">• WHAT WE DO •</span>
+    <h2>Services We <span>Provide</span></h2>
+    <p>End-to-end digital solutions that deliver measurable results. Click any service to explore packages.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal-up" onclick="openSvcModal('smm')">
+      <div class="arrow-btn"><i class="fas fa-arrow-up-right-from-square"></i></div>
+      <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+      <h3>Social Media Marketing</h3>
+      <p>Build powerful brand presence and engaged community across all platforms.</p>
+      <div class="pkg-preview"><span>Starter</span><span class="pop">Growth ⭐</span><span>Pro</span></div>
+    </div>
+    <div class="service-card reveal-up" onclick="openSvcModal('google')">
+      <div class="arrow-btn"><i class="fas fa-arrow-up-right-from-square"></i></div>
+      <div class="service-icon"><i class="fab fa-google"></i></div>
+      <h3>Google Ads</h3>
+      <p>Drive targeted traffic and generate high-quality leads through paid search.</p>
+      <div class="pkg-preview"><span>Starter</span><span class="pop">Growth ⭐</span><span>Pro</span></div>
+    </div>
+    <div class="service-card reveal-up" onclick="openSvcModal('meta')">
+      <div class="arrow-btn"><i class="fas fa-arrow-up-right-from-square"></i></div>
+      <div class="service-icon"><i class="fab fa-facebook"></i></div>
+      <h3>Meta Ads</h3>
+      <p>Scale sales through precision Facebook &amp; Instagram advertising.</p>
+      <div class="pkg-preview"><span>Starter</span><span class="pop">Growth ⭐</span><span>Pro</span></div>
+    </div>
+    <div class="service-card reveal-up" onclick="openSvcModal('web')">
+      <div class="arrow-btn"><i class="fas fa-arrow-up-right-from-square"></i></div>
+      <div class="service-icon"><i class="fas fa-code"></i></div>
+      <h3>Website Development</h3>
+      <p>Fast, responsive websites that convert visitors into customers.</p>
+      <div class="pkg-preview"><span>Basic</span><span class="pop">Business ⭐</span><span>Premium</span></div>
+    </div>
+    <div class="service-card reveal-up" onclick="openSvcModal('design')">
+      <div class="arrow-btn"><i class="fas fa-arrow-up-right-from-square"></i></div>
+      <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
+      <h3>Graphic Designing</h3>
+      <p>Creative visuals that strengthen your brand identity and appeal.</p>
+      <div class="pkg-preview"><span>Starter</span><span class="pop">Growth ⭐</span><span>Pro</span></div>
+    </div>
+    <div class="service-card reveal-up" onclick="openSvcModal('video')">
+      <div class="arrow-btn"><i class="fas fa-arrow-up-right-from-square"></i></div>
+      <div class="service-icon"><i class="fas fa-video"></i></div>
+      <h3>Video Editing</h3>
+      <p>High-impact reels, ads and promotional videos that stop the scroll.</p>
+      <div class="pkg-preview"><span>Starter</span><span class="pop">Growth ⭐</span><span>Pro</span></div>
+    </div>
+    <div class="service-card reveal-up" onclick="openSvcModal('brand')">
+      <div class="arrow-btn"><i class="fas fa-arrow-up-right-from-square"></i></div>
+      <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+      <h3>Branding</h3>
+      <p>Build a complete brand identity with consistent voice and visuals.</p>
+      <div class="pkg-preview"><span>Basic</span><span class="pop">Brand Kit ⭐</span><span>Full Identity</span></div>
+    </div>
+    <div class="service-card reveal-up" onclick="openSvcModal('seo')">
+      <div class="arrow-btn"><i class="fas fa-arrow-up-right-from-square"></i></div>
+      <div class="service-icon"><i class="fas fa-magnifying-glass"></i></div>
+      <h3>SEO Services</h3>
+      <p>Rank higher on Google and drive consistent organic traffic.</p>
+      <div class="pkg-preview"><span>Starter</span><span class="pop">Growth ⭐</span><span>Authority</span></div>
+    </div>
+    <div class="service-card reveal-up" onclick="openSvcModal('content')">
+      <div class="arrow-btn"><i class="fas fa-arrow-up-right-from-square"></i></div>
+      <div class="service-icon"><i class="fas fa-pen"></i></div>
+      <h3>Content Creation</h3>
+      <p>Engaging content that attracts, educates and converts your audience.</p>
+      <div class="pkg-preview"><span>Starter</span><span class="pop">Growth ⭐</span><span>Pro</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE MODAL -->
+<div class="svc-modal-overlay" id="svcModalOverlay" onclick="closeSvcOnBg(event)">
+  <div class="svc-modal" id="svcModal">
+    <button class="svc-modal-close" onclick="closeSvcModal()"><i class="fas fa-times"></i></button>
+    <div id="svcModalContent"></div>
+  </div>
+</div>
+
+<!-- ===== PROJECTS ===== -->
+<section class="projects-section" id="projects-section">
+  <div class="section-head reveal-up">
+    <span class="section-label">OUR CLIENT PORTFOLIO</span>
+    <h2>Brands We've <span>Worked With</span></h2>
+    <p>Showcasing real results delivered across industries.</p>
+  </div>
+  <div class="project-filter">
+    <button class="active" onclick="showTab('smm',this)">Social Media</button>
+    <button onclick="showTab('web',this)">Web Design</button>
+    <button onclick="showTab('album',this)">Album Works</button>
+  </div>
+
+  <div id="smm" class="tab-section active">
+    <div class="portrait-grid">
+
+      <div class="portrait-card reveal-up">
+        <div class="portrait-slider">
+          <img src="palani/img1.jpg" class="active" alt="">
+          <img src="palani/img2.jpg" alt="">
+          <img src="palani/img3.jpg" alt="">
+          <img src="palani/img4.jpg" alt="">
+          <img src="palani/img5.jpg" alt="">
+          <div class="portrait-dots" id="dots-palani"></div>
+        </div>
+        <div class="portrait-info">
+          <div class="portrait-header">
+            <img src="logos/palani.jpeg" class="portrait-logo" alt="">
+            <div>
+              <h3>Sri Palaniyandavar RMC</h3>
+              <p>Construction Industry</p>
+            </div>
+          </div>
+          <span class="portrait-tag">Social Media Marketing</span>
+          <a href="https://www.instagram.com/sri_palaniyandavar_rmc?igsh=MWVmdmF0aWNkbmZpMw==" target="_blank" class="portrait-btn"><i class="fab fa-instagram"></i> Visit Profile</a>
+        </div>
+      </div>
+
+      <div class="portrait-card reveal-up">
+        <div class="portrait-slider">
+          <img src="Precast/1.jpg" class="active" alt="">
+          <img src="Precast/2.jpg" alt="">
+          <img src="Precast/3.jpg" alt="">
+          <img src="Precast/4.jpg" alt="">
+          <img src="Precast/5.jpg" alt="">
+        </div>
+        <div class="portrait-info">
+          <div class="portrait-header">
+            <img src="logos/precast.jpg" class="portrait-logo" alt="">
+            <div>
+              <h3>TVK Precast</h3>
+              <p>Construction Industry</p>
+            </div>
+          </div>
+          <span class="portrait-tag">Social Media Marketing</span>
+          <a href="https://www.instagram.com/t_v_k_precast_pvt_ltd?igsh=MjZ4anJtdWY1eXhq" target="_blank" class="portrait-btn"><i class="fab fa-instagram"></i> Visit Profile</a>
+        </div>
+      </div>
+
+      <div class="portrait-card reveal-up">
+        <div class="portrait-slider">
+          <img src="TVK RMC/1.jpg" class="active" alt="">
+          <img src="TVK RMC/2.jpg" alt="">
+          <img src="TVK RMC/3.jpg" alt="">
+          <img src="TVK RMC/4.jpg" alt="">
+          <img src="TVK RMC/5.jpg" alt="">
+        </div>
+        <div class="portrait-info">
+          <div class="portrait-header">
+            <img src="logos/TVK rmc.jpg" class="portrait-logo" alt="">
+            <div>
+              <h3>TVK RMC</h3>
+              <p>Ready Mix Concrete</p>
+            </div>
+          </div>
+          <span class="portrait-tag">Digital Marketing</span>
+          <a href="https://www.instagram.com/tvk_rmc_pvt_ltd?igsh=NGtrdDl5NGxkMW1y" target="_blank" class="portrait-btn"><i class="fab fa-instagram"></i> Visit Profile</a>
+        </div>
+      </div>
+
+      <div class="portrait-card reveal-up">
+        <div class="portrait-slider">
+          <img src="UTB/1.jpg" class="active" alt="">
+          <img src="UTB/2.jpg" alt="">
+          <img src="UTB/3.jpg" alt="">
+          <img src="UTB/4.jpg" alt="">
+          <img src="UTB/5.jpg" alt="">
+        </div>
+        <div class="portrait-info">
+          <div class="portrait-header">
+            <img src="logos/UTB.jpg" class="portrait-logo" alt="">
+            <div>
+              <h3>Uma Towels &amp; Bedsheets</h3>
+              <p>Textile Industry</p>
+            </div>
+          </div>
+          <span class="portrait-tag">Brand Marketing</span>
+          <a href="https://www.instagram.com/uma_towels_bedsheets?igsh=MTMyYmJzdHZhZTVkOA==" target="_blank" class="portrait-btn"><i class="fab fa-instagram"></i> Visit Profile</a>
+        </div>
+      </div>
+
+      <div class="portrait-card reveal-up">
+        <div class="portrait-slider">
+          <img src="KN Construction/1.jpeg.jpg" class="active" alt="">
+          <img src="KN Construction/2.jpeg.jpg" alt="">
+          <img src="KN Construction/3.jpeg.jpg" alt="">
+          <img src="KN Construction/4.jpeg.jpg" alt="">
+          <img src="KN Construction/5.jpeg.jpg" alt="">
+        </div>
+        <div class="portrait-info">
+          <div class="portrait-header">
+            <img src="logos/knc.jpg" class="portrait-logo" alt="">
+            <div>
+              <h3>KN Construction</h3>
+              <p>Construction Industry</p>
+            </div>
+          </div>
+          <span class="portrait-tag">Digital Marketing</span>
+          <a href="https://www.instagram.com/knconstruction?igsh=MWt4MDZ1aGZ0emlrdA==" target="_blank" class="portrait-btn"><i class="fab fa-instagram"></i> Visit Profile</a>
+        </div>
+      </div>
+
+      <div class="portrait-card reveal-up">
+        <div class="portrait-slider">
+          <img src="Skycrest/New folder/1.jpg" class="active" alt="">
+          <img src="Skycrest/New folder/2.jpg" alt="">
+          <img src="Skycrest/New folder/3.jpg" alt="">
+          <img src="Skycrest/New folder/4.jpg" alt="">
+          <img src="Skycrest/New folder/5.jpg" alt="">
+        </div>
+        <div class="portrait-info">
+          <div class="portrait-header">
+            <img src="Skycrest/New folder/logo.jpg" class="portrait-logo" alt="">
+            <div>
+              <h3>SkyCrest</h3>
+              <p>Digital Marketing Agency</p>
+            </div>
+          </div>
+          <span class="portrait-tag">Instagram Profile</span>
+          <a href="https://instagram.com/skycrest_by_suriya" target="_blank" class="portrait-btn"><i class="fab fa-instagram"></i> Visit Profile</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="web" class="tab-section">
+    <div class="projects-grid">
+      <div class="project-card reveal-up"><div class="client-header"><img src="logos/web1-logo.png" class="client-logo" alt=""><div class="client-details"><h3>Dreams Infinite</h3><p>Studio</p><span class="c-tag">Website Development</span></div></div><img src="web/web1.jpg" class="site-screenshot" alt=""><a href="https://dreamsinfinitestudio.netlify.app/" target="_blank" class="view-more">Visit Website →</a></div>
+      <div class="project-card reveal-up"><div class="client-header"><img src="logos/web2-logo.png" class="client-logo" alt=""><div class="client-details"><h3>Robatix</h3><p>Web Class</p><span class="c-tag">Website Development</span></div></div><img src="web/web2.jpg" class="site-screenshot" alt=""><a href="https://buildxrobotixbyvidhaiaisolutions.netlify.app" target="_blank" class="view-more">Visit Website →</a></div>
+    </div>
+  </div>
+
+  <div id="album" class="tab-section">
+    <div class="album-list">
+      <div class="album-coming-soon">
+        <div class="coming-card"><div class="coming-blur"><i class="fas fa-lock"></i><span class="coming-badge">COMING SOON</span><p>Wedding Album 01</p><small>Premium cinematic layout — uploading soon</small></div></div>
+        <div class="coming-card"><div class="coming-blur"><i class="fas fa-lock"></i><span class="coming-badge">COMING SOON</span><p>Wedding Album 02</p><small>Luxury album design — uploading soon</small></div></div>
+        <div class="coming-card"><div class="coming-blur"><i class="fas fa-lock"></i><span class="coming-badge">UPCOMING</span><p>Album Works 03</p><small>Creative layouts — launching soon</small></div></div>
+      </div>
+      <div class="album-notify">
+        <i class="fas fa-bell"></i>
+        <p>Our album works are being uploaded. <a href="https://wa.me/919342838848?text=Notify%20me%20when%20album%20works%20are%20live" target="_blank">Notify me on WhatsApp →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUSTED PARTNERS STRIP ===== -->
+<section class="partners-section reveal-up">
+  <p class="partners-label">TRUSTED PARTNERS & COLLABORATORS</p>
+  <div class="partners-track-wrap">
+    <div class="partners-track">
+      <div class="partner-pill"><i class="fas fa-code"></i><span>Vidhai AI Solutions</span><small>Tech Partner</small></div>
+      <div class="partner-pill"><i class="fas fa-pen-nib"></i><span>Abimanyu Design</span><small>Design Partner</small></div>
+      <div class="partner-pill"><i class="fas fa-bullhorn"></i><span>Sri Palaniyandavar RMC</span><small>Construction Client</small></div>
+      <div class="partner-pill"><i class="fas fa-industry"></i><span>TVK Precast</span><small>Construction Client</small></div>
+      <div class="partner-pill"><i class="fas fa-tshirt"></i><span>Uma Towels</span><small>Textile Client</small></div>
+      <div class="partner-pill"><i class="fas fa-hammer"></i><span>KN Construction</span><small>Construction Client</small></div>
+      <div class="partner-pill"><i class="fas fa-code"></i><span>Vidhai AI Solutions</span><small>Tech Partner</small></div>
+      <div class="partner-pill"><i class="fas fa-pen-nib"></i><span>Abimanyu Design</span><small>Design Partner</small></div>
+      <div class="partner-pill"><i class="fas fa-bullhorn"></i><span>Sri Palaniyandavar RMC</span><small>Construction Client</small></div>
+      <div class="partner-pill"><i class="fas fa-industry"></i><span>TVK Precast</span><small>Construction Client</small></div>
+      <div class="partner-pill"><i class="fas fa-tshirt"></i><span>Uma Towels</span><small>Textile Client</small></div>
+      <div class="partner-pill"><i class="fas fa-hammer"></i><span>KN Construction</span><small>Construction Client</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="stats-section">
+  <div class="stat-box reveal-up"><h2 class="counter" data-target="20">0</h2><p>Happy Clients</p></div>
+  <div class="stat-box reveal-up"><h2 class="counter" data-target="100">0</h2><p>Projects Done</p></div>
+  <div class="stat-box reveal-up"><h2 class="counter" data-target="90">0</h2><p>Avg Growth %</p></div>
+  <div class="stat-box reveal-up"><h2 class="counter" data-target="2">0</h2><p>Years Active</p></div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials-section" id="testimonials-section">
+  <div class="section-head reveal-up">
+    <span class="section-label">• CLIENT LOVE •</span>
+    <h2>What Our <span>Clients Say</span></h2>
+    <p>Real feedback from businesses we've helped grow across Tamil Nadu.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal-up">
+      <div class="testi-quote-icon">"</div>
+      <p class="testi-text">SkyCrest transformed our online presence completely. Our Instagram followers grew from 200 to 3,000 in just 3 months, and the quality of design work is outstanding. Suriya is very professional and responsive.</p>
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-author">
+        <div class="testi-avatar">R</div>
+        <div>
+          <div class="testi-name">Rajesh Kumar</div>
+          <div class="testi-biz">Sri Palaniyandavar RMC</div>
+          <span class="testi-industry">Construction</span>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal-up">
+      <div class="testi-quote-icon">"</div>
+      <p class="testi-text">The website they built for us is fast, beautiful and already ranking on Google. Within 2 months we started getting online enquiries. Best investment we made for our business this year.</p>
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-author">
+        <div class="testi-avatar">P</div>
+        <div>
+          <div class="testi-name">Priya Selvam</div>
+          <div class="testi-biz">Dreams Infinite Studio</div>
+          <span class="testi-industry">Studio & Events</span>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal-up">
+      <div class="testi-quote-icon">"</div>
+      <p class="testi-text">Our textile brand visibility improved massively after working with SkyCrest. The poster designs, reels and captions are consistently on-brand. They understand our business without much explanation needed.</p>
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-author">
+        <div class="testi-avatar">M</div>
+        <div>
+          <div class="testi-name">Murugan S</div>
+          <div class="testi-biz">Uma Towels &amp; Bedsheets</div>
+          <span class="testi-industry">Textile</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="process-section" id="process-section">
+  <div class="section-head reveal-up">
+    <span class="section-label">• HOW WE WORK •</span>
+    <h2>Our <span>Process</span></h2>
+    <p>Simple, transparent and results-focused — from first call to final delivery.</p>
+  </div>
+  <div class="process-grid">
+    <div class="process-card reveal-up">
+      <div class="process-num">01</div>
+      <div class="process-icon"><i class="fas fa-phone-alt"></i></div>
+      <h3>Discovery Call</h3>
+      <p>We understand your business, goals, target audience and current challenges in a free 30-minute call.</p>
+    </div>
+    <div class="process-connector reveal-up"><i class="fas fa-arrow-right"></i></div>
+    <div class="process-card reveal-up">
+      <div class="process-num">02</div>
+      <div class="process-icon"><i class="fas fa-chess"></i></div>
+      <h3>Strategy</h3>
+      <p>We build a custom digital marketing strategy with clear goals, timelines and measurable KPIs.</p>
+    </div>
+    <div class="process-connector reveal-up"><i class="fas fa-arrow-right"></i></div>
+    <div class="process-card reveal-up">
+      <div class="process-num">03</div>
+      <div class="process-icon"><i class="fas fa-rocket"></i></div>
+      <h3>Execution</h3>
+      <p>Our team executes the plan — content, ads, design, SEO — with precision and speed.</p>
+    </div>
+    <div class="process-connector reveal-up"><i class="fas fa-arrow-right"></i></div>
+    <div class="process-card reveal-up">
+      <div class="process-num">04</div>
+      <div class="process-icon"><i class="fas fa-chart-line"></i></div>
+      <h3>Results</h3>
+      <p>Track real growth through monthly reports, analytics and strategy refinements for continuous improvement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section class="team-section" id="team-section">
+  <div class="section-head reveal-up">
+    <span class="section-label">• OUR PEOPLE •</span>
+    <h2>The <span>Team</span> Behind SkyCrest</h2>
+  </div>
+
+  <div class="founder-hero reveal-up">
+    <div class="founder-photo">
+      <img src="Team/Suriya.jpeg" alt="B. Suriya Prakash">
+      <div class="founder-badge">FOUNDER &amp; CEO</div>
+    </div>
+    <div class="founder-info">
+      <span class="founder-label">LEADING SKYCREST SINCE 2024</span>
+      <h2>B. Suriya Prakash</h2>
+      <p class="founder-role">Digital Marketing Strategist · Brand Builder · Growth Expert</p>
+      <p class="founder-desc">Suriya founded SkyCrest Digital Marketing Agency with a clear mission — to help Tamil Nadu businesses compete and grow in the digital world. He specialises in performance marketing, brand strategy, SEO and web development. With hands-on expertise across Google Ads, Meta Ads and content strategy, he has delivered measurable growth for 20+ clients across construction, textile and retail industries.</p>
+      <div class="founder-socials">
+        <a href="https://instagram.com/skycrest_by_suriya" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://wa.me/919342838848" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="Resume_Suriya_.pdf" target="_blank"><i class="fas fa-file-alt"></i> Resume</a>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-heading reveal-up">Collaborators &amp; Partners</h3>
+  <div class="team-grid">
+    <div class="flip-card reveal-left">
+      <div class="flip-inner">
+        <div class="flip-front"><img src="Team/Manish.jpeg" alt="Manish"><h3>Manish</h3><p>Collaborator — Vidhai AI</p><span class="flip-hint">Hover to know more →</span></div>
+        <div class="flip-back"><h3>Manish</h3><p class="flip-role">Technology Partner</p><p>Vidhai AI provides website development and AI solutions, supporting SkyCrest with modern, scalable web experiences and automation.</p><div class="socials"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div></div>
+      </div>
+    </div>
+    <div class="flip-card reveal-right">
+      <div class="flip-inner">
+        <div class="flip-front"><img src="Team/abi.jpg" alt="Abimanyu"><h3>Abimanyu</h3><p>Senior Graphic Designer</p><span class="flip-hint">Hover to know more →</span></div>
+        <div class="flip-back"><h3>Abimanyu</h3><p class="flip-role">Design Partner</p><p>Leads all visual identity work — social media creatives, brand assets, promotional posters and marketing materials that engage and convert.</p><div class="socials"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div></div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-heading reveal-up">Interns &amp; Trainees</h3>
+  <div class="intern-grid">
+    <div class="member-card reveal-up"><img src="Team/traine.jpg" alt="Trainee"><h3>Trainee</h3><p>Digital Marketing</p></div>
+    <div class="member-card reveal-up"><img src="Team/intern.jpg" alt="Intern"><h3>Intern</h3><p>Content Creator</p></div>
+    <div class="member-card reveal-up"><img src="Team/intern.jpg" alt="Intern"><h3>Intern</h3><p>Designer</p></div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq-section" id="faq-section">
+  <div class="section-head reveal-up">
+    <span class="section-label">• FAQ •</span>
+    <h2>Common <span>Questions</span></h2>
+    <p>Everything you need to know before working with us.</p>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item reveal-up" onclick="toggleFaq(this)">
+      <div class="faq-q"><span>How long does it take to see results?</span><i class="fas fa-plus"></i></div>
+      <div class="faq-a"><p>SEO typically takes 3–6 months. Social media and ads show results within 2–4 weeks. Websites are delivered in 7–20 days depending on the package.</p></div>
+    </div>
+    <div class="faq-item reveal-up" onclick="toggleFaq(this)">
+      <div class="faq-q"><span>Do you work with small businesses?</span><i class="fas fa-plus"></i></div>
+      <div class="faq-a"><p>Absolutely. Most of our clients are small and medium businesses across Tamil Nadu. We have starter packages designed specifically for businesses just starting their digital journey.</p></div>
+    </div>
+    <div class="faq-item reveal-up" onclick="toggleFaq(this)">
+      <div class="faq-q"><span>What is included in the monthly reports?</span><i class="fas fa-plus"></i></div>
+      <div class="faq-a"><p>Our reports include follower growth, post reach, ad performance (clicks, leads, cost per lead), website traffic and keyword rankings — depending on your active services.</p></div>
+    </div>
+    <div class="faq-item reveal-up" onclick="toggleFaq(this)">
+      <div class="faq-q"><span>Can I upgrade my package later?</span><i class="fas fa-plus"></i></div>
+      <div class="faq-a"><p>Yes, you can upgrade anytime. Many clients start with Starter and move to Growth after seeing initial results. We make the transition smooth with no downtime.</p></div>
+    </div>
+    <div class="faq-item reveal-up" onclick="toggleFaq(this)">
+      <div class="faq-q"><span>Do you require a long-term contract?</span><i class="fas fa-plus"></i></div>
+      <div class="faq-a"><p>No long-term lock-in. We work on monthly retainers. We believe results speak louder than contracts — if you're happy, you stay.</p></div>
+    </div>
+    <div class="faq-item reveal-up" onclick="toggleFaq(this)">
+      <div class="faq-q"><span>How do I get started?</span><i class="fas fa-plus"></i></div>
+      <div class="faq-a"><p>Simply click the WhatsApp button or fill the contact form. We'll schedule a free 30-minute discovery call to understand your business and suggest the right plan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact-section" id="contact-section">
+  <div class="contact-left reveal-left">
+    <span class="section-label">• GET IN TOUCH •</span>
+    <h2>Let's Grow<br>Your Business</h2>
+    <p>Ready to take your brand to the next level? Let's build something great together.</p>
+    <div class="contact-info">
+      <div class="info-box"><i class="fas fa-map-marker-alt"></i><div><h4>Address</h4><p>Chromepet &amp; Erode, Tamil Nadu</p></div></div>
+      <div class="info-box"><i class="fas fa-phone-alt"></i><div><h4>Phone</h4><p>+91 93428 38848</p></div></div>
+      <div class="info-box"><i class="fas fa-envelope"></i><div><h4>Email</h4><p>growth.skycrestofficial@gmail.com</p></div></div>
+    </div>
+    <div class="social-icons">
+      <a href="https://instagram.com/skycrest_by_suriya" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://wa.me/919342838848" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+  <div class="contact-right reveal-right">
+    <h3>Send a Message</h3>
+    <form id="contactForm" action="https://formsubmit.co/growth.skycrestofficial@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://skycrest.in/#contact-section">
+      <div class="form-group"><input type="text" name="name" placeholder="Your Name" required><label>Your Name</label></div>
+      <div class="form-group"><input type="email" name="email" placeholder="Email Address" required><label>Email Address</label></div>
+      <div class="form-group"><input type="text" name="phone" placeholder="Phone Number"><label>Phone Number</label></div>
+      <div class="form-group"><textarea name="message" placeholder="Tell us about your project..." required></textarea><label>Your Message</label></div>
+      <button type="submit" class="submit-btn" id="submitBtn">Send Message <i class="fas fa-paper-plane"></i></button>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="skycrest-logo.png" alt="SkyCrest" class="footer-logo-img">
+      <p>SkyCrest is a Tamil Nadu-based digital marketing agency helping small and medium businesses grow online through performance-driven strategies.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/skycrest_by_suriya" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/919342838848" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>QUICK LINKS</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about-section">About</a></li>
+        <li><a href="#services-section">Services</a></li>
+        <li><a href="#projects-section">Our Work</a></li>
+        <li><a href="#team-section">Team</a></li>
+        <li><a href="#contact-section">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>SERVICES</h4>
+      <ul>
+        <li><a href="#services-section" onclick="setTimeout(()=>openSvcModal('smm'),400)">Social Media Marketing</a></li>
+        <li><a href="#services-section" onclick="setTimeout(()=>openSvcModal('google'),400)">Google Ads</a></li>
+        <li><a href="#services-section" onclick="setTimeout(()=>openSvcModal('seo'),400)">SEO Services</a></li>
+        <li><a href="#services-section" onclick="setTimeout(()=>openSvcModal('web'),400)">Website Development</a></li>
+        <li><a href="#services-section" onclick="setTimeout(()=>openSvcModal('brand'),400)">Branding</a></li>
+        <li><a href="#services-section" onclick="setTimeout(()=>openSvcModal('design'),400)">Graphic Design</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>CONTACT</h4>
+      <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Chromepet &amp; Erode, Tamil Nadu</span></div>
+      <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><span>+91 93428 38848</span></div>
+      <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>growth.skycrestofficial@gmail.com</span></div>
+      <div class="footer-contact-item"><i class="fab fa-instagram"></i><span>@skycrest_by_suriya</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 SkyCrest Digital Marketing Agency. All rights reserved.</p>
+    <p class="footer-bottom-right">Built with ❤ in Tamil Nadu</p>
+  </div>
+</footer>
+
+<script src="suriy.js"></script>
+<script>
+/* ===== SERVICE DATA ===== */
+const wa = 'https://wa.me/919342838848?text=Hi%20Suriya%2C%20I%20am%20interested%20in%20';
+
+const svcData = {
+  smm: {
+    icon:'fas fa-bullhorn', name:'Social Media Marketing', tag:'INSTAGRAM · FACEBOOK · LINKEDIN',
+    desc:'We manage your social media end-to-end — strategy, design, posting and engagement. Our team creates scroll-stopping content that builds your brand, grows your followers and converts them into real customers.',
+    features:['Content Strategy','Post Design','Caption Writing','Hashtag Research','Story & Reel Creation','Account Monitoring','Monthly Report'],
+    packages:[
+      { name:'STARTER', price:'₹4,999', period:'per month', popular:false, items:['8 Posts / Month','Basic Graphic Design','2 Platforms (IG + FB)','Caption + Hashtags','Monthly Report','WhatsApp Support'] },
+      { name:'GROWTH', price:'₹9,999', period:'per month', popular:true, items:['20 Posts / Month','Premium Design + Reels','3 Platforms','Story Content (8/month)','Ad Boost Strategy','Weekly Progress Update','Priority Support'] },
+      { name:'PRO', price:'₹17,999', period:'per month', popular:false, items:['35 Posts + Reels + Stories','All Platforms','Meta Ads Management','Influencer Outreach','Analytics Dashboard','Content Calendar','Dedicated Manager'] }
+    ]
+  },
+  google: {
+    icon:'fab fa-google', name:'Google Ads', tag:'SEARCH · DISPLAY · YOUTUBE',
+    desc:'We create and manage high-converting Google Ads campaigns that put your business in front of people actively searching for what you offer. Every rupee is tracked, optimised and made to work harder.',
+    features:['Keyword Research','Campaign Setup','Ad Copywriting','Landing Page Review','Bid Management','A/B Testing','Monthly ROI Report'],
+    packages:[
+      { name:'STARTER', price:'₹5,999', period:'per month + ad spend', popular:false, items:['1 Campaign Setup','Up to ₹10K Ad Spend','Search Ads Only','Basic Keywords (20)','Monthly Report','WhatsApp Support'] },
+      { name:'GROWTH', price:'₹10,999', period:'per month + ad spend', popular:true, items:['3 Campaigns','Up to ₹25K Ad Spend','Search + Display Ads','Advanced Keywords (60)','Retargeting Setup','Bi-Weekly Report','Priority Support'] },
+      { name:'PRO', price:'₹18,999', period:'per month + ad spend', popular:false, items:['Unlimited Campaigns','Up to ₹60K Ad Spend','Search + Display + YouTube','Full Keyword Strategy','Conversion Tracking','Weekly Report','Dedicated Manager'] }
+    ]
+  },
+  meta: {
+    icon:'fab fa-facebook', name:'Meta Ads', tag:'FACEBOOK · INSTAGRAM · REELS ADS',
+    desc:'We run data-driven Facebook and Instagram ad campaigns that reach your exact target audience. From awareness to sales — we build funnels that convert scrollers into paying customers.',
+    features:['Audience Research','Ad Creative Design','Campaign Strategy','Retargeting Funnels','Pixel Setup','A/B Testing','Performance Reports'],
+    packages:[
+      { name:'STARTER', price:'₹4,999', period:'per month + ad spend', popular:false, items:['1 Campaign','Up to ₹8K Ad Spend','2 Ad Creatives','Basic Targeting','Monthly Report','WhatsApp Support'] },
+      { name:'GROWTH', price:'₹9,999', period:'per month + ad spend', popular:true, items:['3 Campaigns','Up to ₹20K Ad Spend','5 Ad Creatives + Video','Lookalike + Retargeting','Pixel + Event Tracking','Bi-Weekly Report','Priority Support'] },
+      { name:'PRO', price:'₹16,999', period:'per month + ad spend', popular:false, items:['Unlimited Campaigns','Up to ₹50K Ad Spend','Full Creative Suite','Advanced Funnel Strategy','CRM Integration','Weekly Report + Call','Dedicated Manager'] }
+    ]
+  },
+  web: {
+    icon:'fas fa-code', name:'Website Development', tag:'HTML · CSS · JS · RESPONSIVE',
+    desc:'We build fast, modern and mobile-first websites that look stunning and convert visitors into customers. From portfolios to business sites — every site is SEO-ready and performance-optimised.',
+    features:['Custom Design','Mobile Responsive','SEO Optimised','Fast Loading','Contact Forms','Social Integration','1 Month Free Support'],
+    packages:[
+      { name:'BASIC', price:'₹7,999', period:'one time', popular:false, items:['3–5 Page Website','Mobile Responsive','Basic SEO Setup','Contact Form','WhatsApp Button','1 Month Support','Delivery: 7 Days'] },
+      { name:'BUSINESS', price:'₹14,999', period:'one time', popular:true, items:['8–10 Page Website','Premium Custom Design','Full SEO Optimisation','Blog / Gallery Section','Google Analytics','3 Months Support','Delivery: 12 Days'] },
+      { name:'PREMIUM', price:'₹24,999', period:'one time', popular:false, items:['Unlimited Pages','Advanced Animations','E-Commerce Ready','Admin Dashboard','Speed Optimisation','6 Months Support','Delivery: 20 Days'] }
+    ]
+  },
+  design: {
+    icon:'fas fa-pen-nib', name:'Graphic Designing', tag:'SOCIAL MEDIA · PRINT · BRAND',
+    desc:'We create eye-catching visual content that strengthens your brand across all channels. From social media posts to banners and business cards — every design tells your brand story.',
+    features:['Social Media Posts','Logo Design','Banner Design','Brochure / Flyer','Business Card','Brand Kit','Quick Turnaround'],
+    packages:[
+      { name:'STARTER', price:'₹2,999', period:'per month', popular:false, items:['10 Social Media Posts','2 Banner Designs','Canva / Basic Tools','PNG + JPG Delivery','2 Revisions','WhatsApp Support'] },
+      { name:'GROWTH', price:'₹5,999', period:'per month', popular:true, items:['20 Social Media Posts','5 Banners + Story Designs','Photoshop + Illustrator','Source File Included','Unlimited Revisions','Priority Delivery'] },
+      { name:'PRO', price:'₹10,999', period:'per month', popular:false, items:['35 Posts + Stories + Reels Cover','Full Brand Kit','Motion Graphics (3/month)','All File Formats','Brand Style Guide','Dedicated Designer'] }
+    ]
+  },
+  video: {
+    icon:'fas fa-video', name:'Video Editing', tag:'REELS · ADS · PROMO VIDEOS',
+    desc:'We edit professional videos optimised for Instagram Reels, YouTube Shorts and Facebook Ads. Scroll-stopping edits with captions, transitions, music and branding that make people stop and watch.',
+    features:['Reel Editing','Ad Video Editing','Subtitles / Captions','Music Sync','Colour Grading','Intro / Outro','Brand Watermark'],
+    packages:[
+      { name:'STARTER', price:'₹3,499', period:'per month', popular:false, items:['4 Reels / Month','Up to 60 Sec Each','Basic Transitions','Background Music','Subtitles','HD 1080p Export'] },
+      { name:'GROWTH', price:'₹6,999', period:'per month', popular:true, items:['10 Reels / Month','Up to 90 Sec Each','Premium Transitions + Effects','Colour Grading','Captions + Brand Logo','4K Export + Priority'] },
+      { name:'PRO', price:'₹12,999', period:'per month', popular:false, items:['20 Reels + 2 Ad Videos','Unlimited Length','Cinematic Editing','Motion Graphics','Full Brand Package','4K + Fastest Delivery'] }
+    ]
+  },
+  brand: {
+    icon:'fas fa-lightbulb', name:'Branding', tag:'LOGO · IDENTITY · GUIDELINES',
+    desc:'We build complete brand identities that make your business unforgettable. From logo design to color palettes, typography and brand voice — we give your business a consistent, premium presence.',
+    features:['Logo Design','Color Palette','Typography System','Brand Voice Guide','Business Card Design','Social Media Kit','Brand Style Guide'],
+    packages:[
+      { name:'BASIC', price:'₹4,999', period:'one time', popular:false, items:['Logo Design (3 Concepts)','Color Palette','Business Card Design','PNG / JPG / PDF Files','2 Revision Rounds','7 Day Delivery'] },
+      { name:'BRAND KIT', price:'₹9,999', period:'one time', popular:true, items:['Logo + Icon Variations','Color + Typography System','Social Media Templates (5)','Letterhead + Visiting Card','Brand Style Guide PDF','Source Files Included','Unlimited Revisions'] },
+      { name:'FULL IDENTITY', price:'₹17,999', period:'one time', popular:false, items:['Everything in Brand Kit','Brand Voice Document','Full Social Media Kit (20 templates)','Packaging / Label Design','Pitch Deck Template','Brand Launch Strategy','Priority Delivery'] }
+    ]
+  },
+  seo: {
+    icon:'fas fa-magnifying-glass', name:'SEO Services', tag:'ON-PAGE · OFF-PAGE · LOCAL SEO',
+    desc:'We optimise your website to rank higher on Google, drive consistent organic traffic and generate leads — without paying for ads. Long-term growth that compounds every month.',
+    features:['Keyword Research','On-Page Optimisation','Technical SEO Audit','Backlink Building','Google Business Profile','Monthly Rankings Report','Competitor Analysis'],
+    packages:[
+      { name:'STARTER', price:'₹5,499', period:'per month', popular:false, items:['10 Keywords Targeted','On-Page SEO (5 Pages)','Google Business Setup','Basic Backlinks (5)','Monthly Report','WhatsApp Support'] },
+      { name:'GROWTH', price:'₹10,499', period:'per month', popular:true, items:['25 Keywords Targeted','On-Page SEO (Full Site)','Technical SEO Audit','Backlinks (15/month)','Local SEO Optimisation','Bi-Weekly Report + Call'] },
+      { name:'AUTHORITY', price:'₹18,499', period:'per month', popular:false, items:['50+ Keywords Targeted','Full Site + Blog SEO','Advanced Technical Audit','Backlinks (30/month)','Competitor Gap Strategy','Weekly Report + Strategy Call','Dedicated SEO Manager'] }
+    ]
+  },
+  content: {
+    icon:'fas fa-pen', name:'Content Creation', tag:'CAPTIONS · BLOGS · SCRIPTS',
+    desc:'We create compelling content that speaks to your audience, builds trust and drives action. From Instagram captions and blog posts to video scripts and email campaigns — words that work.',
+    features:['Caption Writing','Blog Articles','Video Scripts','Email Newsletters','Ad Copy','Content Calendar','SEO Content'],
+    packages:[
+      { name:'STARTER', price:'₹2,999', period:'per month', popular:false, items:['10 Social Captions','2 Blog Posts (500 words)','Basic Content Calendar','Hashtag Research','WhatsApp Support'] },
+      { name:'GROWTH', price:'₹5,999', period:'per month', popular:true, items:['20 Social Captions','4 Blog Posts (800 words)','4 Video Scripts','Email Newsletter (2/month)','Content Calendar','SEO Keyword Integration'] },
+      { name:'PRO', price:'₹10,999', period:'per month', popular:false, items:['35 Captions + Stories','8 Long-Form Blog Posts','8 Video Scripts','Weekly Email Campaign','Ad Copy (Facebook + Google)','Full Content Strategy + Calendar'] }
+    ]
+  }
+};
+
+/* ===== MODAL FUNCTIONS ===== */
+function openSvcModal(key) {
+  const s = svcData[key];
+  if (!s) return;
+
+  const pkgHTML = s.packages.map(p => `
+    <div class="svc-pkg-card ${p.popular ? 'popular' : ''}">
+      ${p.popular ? '<div class="popular-badge">⭐ MOST POPULAR</div>' : ''}
+      <div class="svc-pkg-name">${p.name}</div>
+      <div class="svc-pkg-price">${p.price}</div>
+      <div class="svc-pkg-period">${p.period}</div>
+      <ul class="svc-pkg-features">
+        ${p.items.map(i => `<li><i class="fas fa-check-circle"></i>${i}</li>`).join('')}
+      </ul>
+      <a href="${wa}${encodeURIComponent(p.name + ' - ' + s.name)}" target="_blank"
+         class="svc-pkg-btn ${p.popular ? 'filled' : 'outline'}">
+        <i class="fab fa-whatsapp"></i> Book ${p.name}
+      </a>
+    </div>
+  `).join('');
+
+  const pillHTML = s.features.map(f =>
+    `<div class="svc-pill"><i class="fas fa-check"></i>${f}</div>`
+  ).join('');
+
+  document.getElementById('svcModalContent').innerHTML = `
+    <div class="svc-modal-header">
+      <div class="svc-modal-icon"><i class="${s.icon}"></i></div>
+      <div>
+        <h2>${s.name}</h2>
+        <div class="svc-modal-tag">${s.tag}</div>
+      </div>
+    </div>
+    <p class="svc-modal-desc">${s.desc}</p>
+    <div class="svc-features">${pillHTML}</div>
+    <div class="pkg-heading">CHOOSE YOUR PACKAGE</div>
+    <div class="svc-pkg-grid">${pkgHTML}</div>
+    <div class="svc-custom-note">
+      <i class="fas fa-info-circle"></i>
+      <span>Need a custom plan? <a href="${wa}Custom%20Package%20Query" target="_blank">Chat with us on WhatsApp</a> — we'll build a package just for you.</span>
+    </div>
+  `;
+
+  document.getElementById('svcModalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSvcModal() {
+  document.getElementById('svcModalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeSvcOnBg(e) {
+  if (e.target === document.getElementById('svcModalOverlay')) closeSvcModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSvcModal(); });
+
+/* ===== CONTACT TOAST ===== */
+(function(){
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+  const urlParams = new URLSearchParams(window.location.search);
+  // Show toast if redirected back after submit (formsubmit appends nothing, but we can detect hash)
+  if (window.location.hash === '#contact-section' && document.referrer.includes('formsubmit')) {
+    showToast();
+  }
+  // Also intercept submit for visual feedback
+  form.addEventListener('submit', function() {
+    setTimeout(showToast, 3000);
+  });
+})();
+
+function showToast() {
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 4500);
+}
+</script>
+</body>
+</html>
